@@ -1,0 +1,14 @@
+[user]
+    name = Ron MacNeil
+    email = macro@hotmail.com
+
+[core]
+    autocrlf = false
+    whitespace = cr-at-eol
+
+[color]
+    ui = true
+
+[diff]
+    algorithm = patience
+
