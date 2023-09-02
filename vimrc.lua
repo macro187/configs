@@ -73,23 +73,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set({ "n" }, "<leader>r", vim.lsp.buf.rename, opts)
         vim.keymap.set({ "n" }, "<leader>a", vim.lsp.buf.code_action, opts)
         setup_lsp_overloads(client, buffer_number)
-
-        --
-        -- Temporary hack for broken omnisharp-roslyn
-        -- https://github.com/OmniSharp/omnisharp-roslyn/issues/2483
-        --
-        if client.name == "omnisharp" then
-            local tokenModifiers = client.server_capabilities.semanticTokensProvider.legend.tokenModifiers
-            for i, v in ipairs(tokenModifiers) do
-              tmp = string.gsub(v, ' ', '_')
-              tokenModifiers[i] = string.gsub(tmp, '-_', '')
-            end
-            local tokenTypes = client.server_capabilities.semanticTokensProvider.legend.tokenTypes
-            for i, v in ipairs(tokenTypes) do
-              tmp = string.gsub(v, ' ', '_')
-              tokenTypes[i] = string.gsub(tmp, '-_', '')
-            end
-        end
     end,
 })
 
