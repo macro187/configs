@@ -1,0 +1,55 @@
+"
+" Ron's VSVim Configuration
+"
+
+set nohlsearch
+
+set scrolloff=999
+set backspace=indent,eol,start
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+
+let mapleader = "\<space>"
+
+nnoremap <Leader>x :vsc View.SolutionExplorer<CR>:vsc SolutionExplorer.SyncWithActiveDocument<CR>
+nnoremap <Leader>e :vsc View.ErrorList<CR>
+
+nnoremap <Leader>w :vsc File.Close<CR>
+nnoremap <Leader>bd :vsc File.Close<CR>
+nnoremap <c-w> :vsc File.Close<CR>
+nnoremap <tab> :vsc Window.NextTab<CR>
+nnoremap <s-tab> :vsc Window.PreviousTab<CR>
+"nnoremap <tab> :vsc Window.NextDocumentWindow<CR>
+"nnoremap <s-tab> :vsc Window.PreviousDocumentWindow<CR>
+
+nnoremap K :vsc Edit.QuickInfo<CR>
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+nnoremap <c-]> :vsc Edit.GoToDefinition<CR>
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap fr :vsc Edit.FindAllReferences<CR>
+nnoremap <c-t> :vsc View.NavigateBackward<CR>
+nnoremap <Leader>a :vsc View.QuickActions<CR>
+nnoremap <Leader>r :vsc Refactor.Rename<CR>
+
+
+"nnoremap <silent> <Leader>w :close<cr>
+"nnoremap <silent> <c-j> :wincmd j<cr>
+"nnoremap <silent> <c-k> :wincmd k<cr>
+"nnoremap <silent> <c-h> :wincmd h<cr>
+"nnoremap <silent> <c-l> :wincmd l<cr>
+"
+"nmap <c-n> :cnext<cr>
+"nmap <c-p> :cprevious<cr>
+"
+"nmap <buffer> gd <plug>(lsp-definition)
+"nmap <buffer> gs <plug>(lsp-document-symbol-search)
+"nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+"nmap <buffer> gr <plug>(lsp-references)
+"nmap <buffer> gi <plug>(lsp-implementation)
+"nmap <buffer> <leader>rn <plug>(lsp-rename)
+"nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+"nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+"nmap <buffer> K <plug>(lsp-hover)
