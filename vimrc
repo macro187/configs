@@ -117,12 +117,12 @@ nmap <silent> <tab> :bnext<cr>
 nmap <silent> <s-tab> :bprevious<cr>
 " Close the buffer without also nuking the window it's in
 nmap <silent> <Leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
+nmap <silent> <Leader>w :bp<bar>sp<bar>bn<bar>bd<CR>
 
 
 "
 " Windows
 "
-nmap <silent> <Leader>w :close<cr>
 nnoremap <silent> <c-j> :wincmd j<cr>
 nnoremap <silent> <c-k> :wincmd k<cr>
 nnoremap <silent> <c-h> :wincmd h<cr>
