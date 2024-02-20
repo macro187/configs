@@ -29,14 +29,37 @@ if has("nvim-tree") then
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
     require("nvim-tree").setup({
-        update_focused_file = {
-            enable = true,
+        view = {
+            float = {
+                enable = true,
+                open_win_config = function() return {
+                    relative = "editor",
+                    border = "rounded",
+                    width = 60,
+                    height = vim.o.lines-3,
+                    row = 0,
+                    col = 0,
+                } end,
+            },
         },
         renderer = {
             full_name = true,
         },
+        update_focused_file = {
+            enable = true,
+        },
+        on_attach = function(bufnr)
+            local function opts(desc)
+                return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+            end
+            local api = require "nvim-tree.api"
+            api.config.mappings.default_on_attach(bufnr)
+            vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+            vim.keymap.set('n', '<esc>', api.tree.close_in_this_tab, opts('Close'))
+            vim.keymap.set('n', '<c-[>', api.tree.close_in_this_tab, opts('Close'))
+        end,
     })
-    vim.keymap.set("n", "<Leader>e", "<cmd>NvimTreeFocus<cr>")
+    vim.keymap.set("n", "<Leader>e", "<cmd>NvimTreeFocus<cr>NvimTreeFindFile<cr>")
 
     -- Close Vim if the tree is the last window
     vim.api.nvim_create_autocmd("BufEnter", {
