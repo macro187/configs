@@ -25,6 +25,8 @@
 "
 
 
+set mouse=
+
 set nobackup
 set nowritebackup
 set noswapfile
@@ -68,6 +70,7 @@ set formatoptions+=j
 if ! has('nvim')
     if has("gui_running")
         if has("gui_win32")
+            set mouse=a
             set guifont=DejaVu_Sans_Mono:h11:cDEFAULT
         else
             set guifont=monospace\ 12
