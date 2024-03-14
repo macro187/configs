@@ -17,10 +17,14 @@ function has(module_name)
 end
 
 
-vim.diagnostic.config {
+vim.diagnostic.config ({
+    virtual_text = false,
     float = { border = "rounded" },
-}
+})
 
+vim.keymap.set("n", "<Leader>k", function()
+    vim.diagnostic.open_float()
+end)
 
 --
 -- nvim-tree
