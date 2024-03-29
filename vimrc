@@ -46,6 +46,10 @@ set cursorlineopt=number
 set ruler
 set rulerformat=%#ModeMsg#%l,%c%V%=%P
 
+if has('nvim')
+    set cmdheight=0
+endif
+
 set list
 set listchars=tab:>\ ,trail:.,extends:>,precedes:<,nbsp:_
 set nohlsearch
