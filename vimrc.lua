@@ -115,10 +115,7 @@ function setup_lsp_overloads(client, buffer_number)
     require('lsp-overloads').setup(client, {
         ui = {
             border = "rounded",
-            width = 80,
-            offset_x = 0,
             focusable = false,
-            floating_window_above_cur_line = true,
         },
         keymaps = {
             next_signature = "<c-n>",
