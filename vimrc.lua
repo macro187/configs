@@ -63,7 +63,7 @@ if has("nvim-tree") then
             vim.keymap.set('n', '<c-[>', api.tree.close_in_this_tab, opts('Close'))
         end,
     })
-    vim.keymap.set("n", "<Leader>e", "<cmd>NvimTreeFocus<cr>NvimTreeFindFile<cr>")
+    vim.keymap.set("n", "<Leader>e", ":silent <cmd>NvimTreeFocus<cr>NvimTreeFindFile<cr>", { silent = true })
 
     -- Close Vim if the tree is the last window
     vim.api.nvim_create_autocmd("BufEnter", {

@@ -140,8 +140,8 @@ nnoremap <silent> <c-l> :wincmd l<cr>
 " Error list
 "
 nmap <silent> <Leader>q :copen<cr>
-nmap <c-n> :cnext<cr>
-nmap <c-p> :cprevious<cr>
+nmap <silent> <c-n> :silent :cnext<cr>
+nmap <silent> <c-p> :silent :cprevious<cr>
 autocmd FileType qf set nowrap
 autocmd FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>
 autocmd FileType qf nnoremap <buffer> <c-[> :cclose<cr>
