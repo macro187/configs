@@ -22,3 +22,4 @@ $HOTBOX/lib/git-clone-cached https://github.com/hrsh7th/cmp-buffer.git
 $HOTBOX/lib/git-clone-cached https://github.com/hrsh7th/vim-vsnip.git
 $HOTBOX/lib/git-clone-cached https://github.com/hrsh7th/cmp-vsnip.git
 $HOTBOX/lib/git-clone-cached https://github.com/Issafalcon/lsp-overloads.nvim.git
+$HOTBOX/lib/git-clone-cached https://github.com/romgrk/barbar.nvim.git

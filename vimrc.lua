@@ -26,6 +26,15 @@ vim.keymap.set("n", "<Leader>k", function()
     vim.diagnostic.open_float()
 end)
 
+
+--
+-- barbar
+--
+if has("barbar") then
+    require("barbar").setup()
+end
+
+
 --
 -- nvim-tree
 --
