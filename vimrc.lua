@@ -31,7 +31,16 @@ end)
 -- barbar
 --
 if has("barbar") then
-    require("barbar").setup()
+    require("barbar").setup({
+        animation = false,
+        focus_on_close = 'previous',
+    })
+
+    local map = vim.api.nvim_set_keymap
+    local opts = { noremap = true, silent = true }
+    map('n', '<tab>', '<Cmd>BufferNext<CR>', opts)
+    map('n', '<s-tab>', '<Cmd>BufferPrevious<CR>', opts)
+    map('n', '<leader>w', '<Cmd>BufferClose<CR>', opts)
 end
 
 
