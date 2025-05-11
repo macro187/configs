@@ -1,8 +1,8 @@
 . $HOTBOX/lib/spec.sh
 
 include ron-dev
-include _ubuntu
-include _dotnet
-include _node
+include _os.ubuntu
+include _app.dotnet
+include _app.node
 feature omnisharp
 feature bash-language-server

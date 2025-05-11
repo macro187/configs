@@ -1,6 +1,6 @@
 . $HOTBOX/lib/spec.sh
 
 include ron-dev
-include _void
-include _dlang
+include _os.void
+include _app.dlang
 feature serve-d
