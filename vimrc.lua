@@ -34,6 +34,11 @@ if has("barbar") then
     require("barbar").setup({
         animation = false,
         focus_on_close = 'previous',
+        highlight_inactive_file_icons = false,
+        icons = {
+            separator = { left = '', right = '' },
+            separator_at_end = false,
+        },
     })
 
     local map = vim.api.nvim_set_keymap
