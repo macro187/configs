@@ -10,10 +10,10 @@ mkdir -p ron/start
 cd ron/start
 echo_off
 
-$HOTBOX/lib/git-clone-cached https://github.com/macro187/vim-macrobsidian.git
-$HOTBOX/lib/git-clone-cached https://github.com/ryanoasis/vim-devicons.git
-$HOTBOX/lib/git-clone-cached https://github.com/gelguy/wilder.nvim.git
-$HOTBOX/lib/git-clone-cached https://github.com/preservim/nerdtree.git
-$HOTBOX/lib/git-clone-cached https://github.com/prabirshrestha/vim-lsp.git
-$HOTBOX/lib/git-clone-cached https://github.com/prabirshrestha/asyncomplete.vim.git
-$HOTBOX/lib/git-clone-cached https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
+hotbox-git-clone-cached https://github.com/macro187/vim-macrobsidian.git
+hotbox-git-clone-cached https://github.com/ryanoasis/vim-devicons.git
+hotbox-git-clone-cached https://github.com/gelguy/wilder.nvim.git
+hotbox-git-clone-cached https://github.com/preservim/nerdtree.git
+hotbox-git-clone-cached https://github.com/prabirshrestha/vim-lsp.git
+hotbox-git-clone-cached https://github.com/prabirshrestha/asyncomplete.vim.git
+hotbox-git-clone-cached https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
