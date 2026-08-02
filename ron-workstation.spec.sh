@@ -1,4 +1,4 @@
-. $HOTBOX/lib/spec.sh
+. hotbox-spec.sh
 
 include interactive
 include _app.docker

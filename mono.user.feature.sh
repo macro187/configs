@@ -1,4 +1,4 @@
-. $HOTBOX/lib/sh.sh
+. hotbox-use-shell.sh
 
 
 install_ubuntu() {

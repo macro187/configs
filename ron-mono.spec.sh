@@ -1,4 +1,4 @@
-. $HOTBOX/lib/spec.sh
+. hotbox-spec.sh
 
 include ron-dotnet
 feature mono
