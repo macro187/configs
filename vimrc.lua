@@ -135,7 +135,13 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 function setup_lsp_overloads(client, buffer_number)
     if not has('lsp-overloads') then return end
     if not client.server_capabilities.signatureHelpProvider then return end
-    require('lsp-overloads').setup(client, {
+    local opts = { silent = true, buffer = buffer_number }
+    vim.keymap.set("n", "<c-k>", ":LspOverloads signature<CR>", opts)
+    vim.keymap.set("i", "<c-k>", "<cmd>LspOverloads signature<CR>", opts)
+end
+
+if has('lsp-overloads') then
+    require('lsp-overloads').setup({
         ui = {
             border = "rounded",
             focusable = false,
@@ -145,12 +151,13 @@ function setup_lsp_overloads(client, buffer_number)
             previous_signature = "<c-p>",
             next_parameter = "<c-l>",
             previous_parameter = "<c-h>",
-            close_signature = "<c-k>"
+            close_signature = "<c-k>",
+            scroll_down = "<c-d>",
+            scroll_up = "<c-u>",
         },
+        display_automatically = true,
+        override_native_handler = true,
     })
-    local opts = { silent = true, buffer = buffer_number }
-    vim.keymap.set("n", "<c-k>", ":LspOverloadsSignature<CR>", opts)
-    vim.keymap.set("i", "<c-k>", "<cmd>LspOverloadsSignature<CR>", opts)
 end
 
 if vim.fn.executable("OmniSharp") == 1 then
